@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TPA OAC</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    </head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <body>
+        <h1>TPA Portal</h1>
+ 
+     <div id="wrapper">
+        
+        <select id="mySelect" size="10">
+            <option value="none"> - Select a TPA Company - </option>
+            <option value="Blackwood Health Inc.">Blackwood Health Inc.</option>
+            <option value="Block Start Management">Block Start Management</option>
+            <option value="Brent & Sons Co.">Brent & Sons Co.</option>
+            <option value="Champlain Health Advisors">Champlain Health Advisors</option>
+            <option value="Health Sun Group">Health Sun Group</option>
+            <option value="Karlington Health Services">Karlington Health Services</option>
+            <option value="Marcus Insurance Group">Marcus Insurance Group</option>
+            <option value="May & Beth Foundation">May & Beth Foundation</option>
+            <option value="Power House Inc.">Power House Inc.</option>
+            <option value="Regional Healthcare Co.">Regional Healthcare Co.</option>
+        </select>
+        
+     </div>
+
+     <button class="submit" type="button" onclick="myFunction()">View Dashboard</button>
+
+    <script>
+        function myFunction() {
+          if(document.getElementById("mySelect").value == "none"){
+            alert('Select your TPA company')
+          }
+          else
+          {
+            window.location.href = '/home?tpa=' + document.getElementById("mySelect").value 
+            "window.location.href='/home' "
+          }
+        }
+        // $('mySelect').on('change', function() {
+        //   console.log( this.value );
+        // });
+    </script>
+
+ 
+   </body>
+
+</html>

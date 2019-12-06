@@ -1,0 +1,47 @@
+<DOCTYPE html>
+<html>
+<head>
+    <script src="https://oacfrankie-orasenatdpltintegration02.analytics.ocp.oraclecloud.com/dv/ui/api/v1/plugins/embedding/standalone/embedding.js" type="application/javascript">
+<title>Oracle Analytics Cloud Embedding Sample</title>
+</script>
+</head>
+<body>
+
+    <div class="topnav">
+        <div class="topnav-right">
+          <a href="/">Exit</a>
+        </div>
+      </div>
+
+<div style="text-align: center">
+<h2>Oracle Analytics Cloud Embedding Sample</h2>
+</div>
+<div style="position:absolute; width: calc(100% - 40px); height: calc(100% - 120px); float: center;">
+    <oracle-dv project-path="/shared/LF_Humana/FrankieLeah" active-page="canvas" active-tab-id="4" filters=" {{filter}} " project-options=" {{showfilter}} "
+    </oracle-dv>
+</div>
+<br>
+<h2>Test Dashboard</h2>
+<script>
+  requirejs(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'], function(ko) { ko.applyBindings();
+	});
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('tpa');
+  history.pushState(myParam, "Oracle Analytics Cloud Embedding Sample", "home");
+  console.log(myParam);
+  var filter = [
+    {
+      "sColFormula" : "XSA('frankie.otoole@oracle.com'.'HUMANA_SAMPLE').\"Columns\".\"TPA_COMPANY\"",
+      "sColName":"TPA_COMPANY",
+      "sOperator": "in",
+      "isNumericCol": false,
+      "bIsDoubleColumn": false,
+      "aCodeValues": [],
+      "aDisplayValues": [myParam]
+      //"aDisplayValues": ["Regional Healthcare Co."]
+    } ];
+    const showfilter = {"bShowFilterBar": false};
+</script>
+
+</body>
+</html>
